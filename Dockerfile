@@ -10,7 +10,7 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 8080
 
-RUN chown -R 1001:1001 /opt/app
+RUN chgrp -R 0 /opt/app && chmod -R g=u /opt/app
 USER 1001
 
 CMD ["python3", "app.py"]
